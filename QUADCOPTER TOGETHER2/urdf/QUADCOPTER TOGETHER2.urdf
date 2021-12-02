@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="QUADCOPTER TOGETHER2">
+  <link
+    name="Drone_body">
+    <inertial>
+      <origin
+        xyz="-0.0474055531202199 0.00715391152308867 -0.00672361192816448"
+        rpy="0 0 0" />
+      <mass
+        value="0.512300127571738" />
+      <inertia
+        ixx="0.000923714747786489"
+        ixy="-1.43645737951548E-06"
+        ixz="1.57613324782888E-06"
+        iyy="0.00073318072047806"
+        iyz="4.67085905863603E-05"
+        izz="0.000727405190937061" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://QUADCOPTER TOGETHER2/meshes/Drone_body.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://QUADCOPTER TOGETHER2/meshes/Drone_body_col.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Motor1">
+    <inertial>
+      <origin
+        xyz="-0.0047604 -0.00018467 1.7397E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0055956" />
+      <inertia
+        ixx="3.3279E-06"
+        ixy="1.1715E-11"
+        ixz="1.2262E-10"
+        iyy="3.2871E-06"
+        iyz="-2.9847E-07"
+        izz="1.4812E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://QUADCOPTER TOGETHER2/meshes/Motor1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 0.50196 0.50196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://QUADCOPTER TOGETHER2/meshes/Motor1_col.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor1_cont"
+    type="continuous">
+    <origin
+      xyz="0.0322499999999999 -0.251499999999997 0"
+      rpy="0 0 0" />
+    <parent
+      link="Drone_body" />
+    <child
+      link="Motor1" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="Motor2">
+    <inertial>
+      <origin
+        xyz="-0.0047604 1.744E-05 0.00018466"
+        rpy="0 0 0" />
+      <mass
+        value="0.0055956" />
+      <inertia
+        ixx="3.3279E-06"
+        ixy="1.2262E-10"
+        ixz="-1.1715E-11"
+        iyy="1.4812E-07"
+        iyz="2.9847E-07"
+        izz="3.2871E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://QUADCOPTER TOGETHER2/meshes/Motor2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 0.50196 0.50196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://QUADCOPTER TOGETHER2/meshes/Motor2_col.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor2_cont"
+    type="continuous">
+    <origin
+      xyz="0.0322499999999999 0 0.251499998477687"
+      rpy="0 0 0" />
+    <parent
+      link="Drone_body" />
+    <child
+      link="Motor2" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="Motor3">
+    <inertial>
+      <origin
+        xyz="-0.0047604 1.744E-05 0.00018472"
+        rpy="0 0 0" />
+      <mass
+        value="0.0055956" />
+      <inertia
+        ixx="3.3279E-06"
+        ixy="1.2262E-10"
+        ixz="-1.1715E-11"
+        iyy="1.4812E-07"
+        iyz="2.9847E-07"
+        izz="3.2871E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://QUADCOPTER TOGETHER2/meshes/Motor3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 0.50196 0.50196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://QUADCOPTER TOGETHER2/meshes/Motor3_col.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor3_cont"
+    type="continuous">
+    <origin
+      xyz="0.03225 0 -0.2515"
+      rpy="0 0 0" />
+    <parent
+      link="Drone_body" />
+    <child
+      link="Motor3" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="Motor4">
+    <inertial>
+      <origin
+        xyz="-0.0047604 1.7409E-05 0.00018469"
+        rpy="0 0 0" />
+      <mass
+        value="0.0055956" />
+      <inertia
+        ixx="3.3279E-06"
+        ixy="1.2262E-10"
+        ixz="-1.1715E-11"
+        iyy="1.4812E-07"
+        iyz="2.9847E-07"
+        izz="3.2871E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://QUADCOPTER TOGETHER2/meshes/Motor4.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.50196 0.50196 0.50196 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://QUADCOPTER TOGETHER2/meshes/Motor4_col.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Motor4_cont"
+    type="continuous">
+    <origin
+      xyz="0.03225 0.2515 0"
+      rpy="0 0 0" />
+    <parent
+      link="Drone_body" />
+    <child
+      link="Motor4" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+</robot>
