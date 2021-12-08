@@ -2,258 +2,177 @@
 <!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
-<robot
-  name="drone">
-  <link
-    name="base_link">
+<robot name="drone">
+  <link name="base_link">
     <inertial>
-      <origin
-        xyz="0.0101961017305633 0.000586581220362037 -0.000302594484117957"
-        rpy="0 0 0" />
-      <mass
-        value="0.496467844881593" />
-      <inertia
-        ixx="0.000909927525918842"
-        ixy="-3.63491786370216E-09"
-        ixz="-2.4593312075908E-08"
-        iyy="0.000718486963084794"
-        iyz="5.25754307050222E-05"
-        izz="0.000714390475951837" />
+      <origin xyz="0.0101961017305633 0.000586581220362037 -0.000302594484117957" rpy="0 0 0" />
+      <mass value="0.496467844881593" />
+      <inertia ixx="0.000909927525918842" ixy="-3.63491786370216E-09" ixz="-2.4593312075908E-08" iyy="0.000718486963084794" iyz="5.25754307050222E-05" izz="0.000714390475951837" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://drone/meshes/base_link.STL" />
+        <mesh filename="package://drone/meshes/base_link.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://drone/meshes/base_link.STL" />
+        <mesh filename="package://drone/meshes/base_link.STL" />
       </geometry>
     </collision>
   </link>
-  <link
-    name="Motor1">
+  <link name="Motor1">
     <inertial>
-      <origin
-        xyz="-0.00476037653239259 -0.000184719138654033 1.742345464531E-05"
-        rpy="0 0 0" />
-      <mass
-        value="0.00559561512965552" />
-      <inertia
-        ixx="3.3278709923919E-06"
-        ixy="1.17147755992747E-11"
-        ixz="1.22617027145887E-10"
-        iyy="3.28708267457033E-06"
-        iyz="-2.98472869269373E-07"
-        izz="1.48115147235542E-07" />
+      <origin xyz="-0.00476037653239259 -0.000184719138654033 1.742345464531E-05" rpy="0 0 0" />
+      <mass value="0.00559561512965552" />
+      <inertia ixx="3.3278709923919E-06" ixy="1.17147755992747E-11" ixz="1.22617027145887E-10" iyy="3.28708267457033E-06" iyz="-2.98472869269373E-07" izz="1.48115147235542E-07" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://drone/meshes/Motor1.STL" />
+        <mesh filename="package://drone/meshes/Motor1.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://drone/meshes/Motor1.STL" />
+        <mesh filename="package://drone/meshes/Motor1.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Motor1_cont"
-    type="continuous">
-    <origin
-      xyz="0.081 -0.251499999999997 0"
-      rpy="0 0 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="Motor1" />
-    <axis
-      xyz="1 0 0" />
+  <joint name="Motor1_cont" type="continuous">
+    <origin xyz="0.081 -0.251499999999997 0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="Motor1" />
+    <axis xyz="1 0 0" />
   </joint>
-  <link
-    name="Motor2">
+  <gazebo reference="motor1_propeller">
+    <material>Gazebo/RedTransparent</material>
+    <motor>
+      <kThrust>0.00025</kThrust>
+      <kTorque>-7.4e-06</kTorque>
+    </motor>
+  </gazebo>
+  <link name="Motor2">
     <inertial>
-      <origin
-        xyz="-0.00476037653239253 1.74234546454488E-05 0.000184719138653977"
-        rpy="0 0 0" />
-      <mass
-        value="0.00559561512965553" />
-      <inertia
-        ixx="3.32787099240208E-06"
-        ixy="1.22617027144401E-10"
-        ixz="-1.17147755992446E-11"
-        iyy="1.48115147245327E-07"
-        iyz="2.98472869267805E-07"
-        izz="3.28708267457073E-06" />
+      <origin xyz="-0.00476037653239253 1.74234546454488E-05 0.000184719138653977" rpy="0 0 0" />
+      <mass value="0.00559561512965553" />
+      <inertia ixx="3.32787099240208E-06" ixy="1.22617027144401E-10" ixz="-1.17147755992446E-11" iyy="1.48115147245327E-07" iyz="2.98472869267805E-07" izz="3.28708267457073E-06" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://drone/meshes/Motor2.STL" />
+        <mesh filename="package://drone/meshes/Motor2.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="">
+        <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://drone/meshes/Motor2.STL" />
+        <mesh filename="package://drone/meshes/Motor2.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Motor2_cont"
-    type="continuous">
-    <origin
-      xyz="0.0809999999999999 0 0.251499999999999"
-      rpy="0 0 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="Motor2" />
-    <axis
-      xyz="1 0 0" />
+  <joint name="Motor2_cont" type="continuous">
+    <origin xyz="0.0809999999999999 0 0.251499999999999" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="Motor2" />
+    <axis xyz="1 0 0" />
   </joint>
-  <link
-    name="Motor3">
+  <gazebo reference="motor2_propeller">
+    <material>Gazebo/RedTransparent</material>
+    <motor>
+      <kThrust>0.00025</kThrust>
+      <kTorque>-7.4e-06</kTorque>
+    </motor>
+  </gazebo>
+
+  <link name="Motor3">
     <inertial>
-      <origin
-        xyz="-0.0047604 1.7423E-05 0.00018472"
-        rpy="0 0 0" />
-      <mass
-        value="0.0055956" />
-      <inertia
-        ixx="3.3279E-06"
-        ixy="1.2262E-10"
-        ixz="-1.1715E-11"
-        iyy="1.4812E-07"
-        iyz="2.9847E-07"
-        izz="3.2871E-06" />
+      <origin xyz="-0.0047604 1.7423E-05 0.00018472" rpy="0 0 0" />
+      <mass value="0.0055956" />
+      <inertia ixx="3.3279E-06" ixy="1.2262E-10" ixz="-1.1715E-11" iyy="1.4812E-07" iyz="2.9847E-07" izz="3.2871E-06" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://drone/meshes/Motor3.STL" />
+        <mesh filename="package://drone/meshes/Motor3.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://drone/meshes/Motor3.STL" />
+        <mesh filename="package://drone/meshes/Motor3.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Motor3_cont"
-    type="continuous">
-    <origin
-      xyz="0.081 0 -0.2515"
-      rpy="0 0 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="Motor3" />
-    <axis
-      xyz="1 0 0" />
+  <joint name="Motor3_cont" type="continuous">
+    <origin xyz="0.081 0 -0.2515" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="Motor3" />
+    <axis xyz="1 0 0" />
   </joint>
-  <link
-    name="Motor4">
+  <gazebo reference="motor3_propeller">
+    <material>Gazebo/RedTransparent</material>
+    <motor>
+      <kThrust>0.00025</kThrust>
+      <kTorque>-7.4e-06</kTorque>
+    </motor>
+  </gazebo>
+  <link name="Motor4">
     <inertial>
-      <origin
-        xyz="-0.0047604 1.7423E-05 0.00018472"
-        rpy="0 0 0" />
-      <mass
-        value="0.0055956" />
-      <inertia
-        ixx="3.3279E-06"
-        ixy="1.2262E-10"
-        ixz="-1.1715E-11"
-        iyy="1.4812E-07"
-        iyz="2.9847E-07"
-        izz="3.2871E-06" />
+      <origin xyz="-0.0047604 1.7423E-05 0.00018472" rpy="0 0 0" />
+      <mass value="0.0055956" />
+      <inertia ixx="3.3279E-06" ixy="1.2262E-10" ixz="-1.1715E-11" iyy="1.4812E-07" iyz="2.9847E-07" izz="3.2871E-06" />
     </inertial>
     <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://drone/meshes/Motor4.STL" />
+        <mesh filename="package://drone/meshes/Motor4.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.79216 0.81961 0.93333 1" />
+      <material name="">
+        <color rgba="0.79216 0.81961 0.93333 1" />
       </material>
     </visual>
     <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
+      <origin xyz="0 0 0" rpy="0 0 0" />
       <geometry>
-        <mesh
-          filename="package://drone/meshes/Motor4.STL" />
+        <mesh filename="package://drone/meshes/Motor4.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Motor4_cont"
-    type="continuous">
-    <origin
-      xyz="0.081 0.2515 0"
-      rpy="0 0 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="Motor4" />
-    <axis
-      xyz="1 0 0" />
+  <joint name="Motor4_cont" type="continuous">
+    <origin xyz="0.081 0.2515 0" rpy="0 0 0" />
+    <parent link="base_link" />
+    <child link="Motor4" />
+    <axis xyz="1 0 0" />
   </joint>
+  <gazebo reference="motor4_propeller">
+    <material>Gazebo/RedTransparent</material>
+    <motor>
+      <kThrust>0.00025</kThrust>
+      <kTorque>-7.4e-06</kTorque>
+    </motor>
+  </gazebo>
+  <gazebo reference="frame">
+    <material>Gazebo/Orange</material>
+  </gazebo>
+  <gazebo>
+    <plugin filename="libdrone_plugin.so" name="drone_plugin">
+      <updateRate>100</updateRate>
+      <publishTf>true</publishTf>
+    </plugin>
+  </gazebo>
 </robot>
